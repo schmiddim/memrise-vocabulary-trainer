@@ -40,8 +40,10 @@ $result = $vocInfo->get("/course/78623/learn-basic-italian/6/");
 
 
 
-$a  = new \Memrise\Parser\Html\VocabularyInformation($result);
-var_dump($a->getItemIds()) ;
+$parser  = new \Memrise\Parser\Html\VocabularyInformation($result);
+#var_dump($parser->getItemIds()) ;
 
 
 //get info about the vocabulary with the id http://www.memrise.com/api/thing/get/?thing_id=14214352
+$thingInfo = new \Memrise\Http\JsonThingInformation();
+print_r($thingInfo->get(14092635));
