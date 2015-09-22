@@ -9,6 +9,10 @@ namespace Memrise\Http;
 
 use Zend\Http\Client;
 
+/**
+ * Class JsonThingInformation
+ * @package Memrise\Http
+ */
 class JsonThingInformation extends AbstractHttp {
 	public function __construct() {
 		$this->setPath('thing/get/?thing_id=');

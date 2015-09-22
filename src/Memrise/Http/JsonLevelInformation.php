@@ -9,7 +9,10 @@ namespace Memrise\Http;
 
 use Zend\Http\Client;
 
-
+/**
+ * Class JsonLevelInformation
+ * @package Memrise\Http
+ */
 class JsonLevelInformation extends AbstractHttp {
 	public function __construct() {
 		$this->setPath('level/get/?level_id=');

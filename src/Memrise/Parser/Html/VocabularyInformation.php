@@ -9,6 +9,10 @@ namespace Memrise\Parser\Html;
 
 use phpQuery;
 
+/**
+ * Class VocabularyInformation
+ * @package Memrise\Parser\Html
+ */
 class VocabularyInformation {
 
 	private $htmlResponse;

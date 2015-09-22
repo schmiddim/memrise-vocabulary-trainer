@@ -8,7 +8,10 @@ namespace Memrise\Http;
 
 use Zend\Http\Client;
 
-
+/**
+ * Class VocabularyResponse
+ * @package Memrise\Http
+ */
 class VocabularyResponse extends AbstractHttp {
 	/**
 	 * @param $path

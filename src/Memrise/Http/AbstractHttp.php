@@ -7,14 +7,27 @@
 
 namespace Memrise\Http;
 
-
+/**
+ * Class AbstractHttp
+ * @package Memrise\Http
+ */
 class AbstractHttp {
 
-
+	/**
+	 * @var string
+	 */
 	protected $domain = 'http://www.memrise.com';
+	/**
+	 * @var string
+	 */
 	protected $apiPath = '/api/';
+	/**
+	 * @var string
+	 */
 	protected $endpoint = 'http://www.memrise.com/api/';
-
+	/**
+	 * @var string
+	 */
 	protected $path = '';
 
 	/**
