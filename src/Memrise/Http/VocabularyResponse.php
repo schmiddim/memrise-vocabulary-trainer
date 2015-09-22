@@ -5,10 +5,11 @@
  * Time: 00:25
  */
 namespace Memrise\Http;
+
 use Zend\Http\Client;
 
 
-class VocabularyResponse  extends AbstractHttp{
+class VocabularyResponse extends AbstractHttp {
 	/**
 	 * @param $path
 	 */

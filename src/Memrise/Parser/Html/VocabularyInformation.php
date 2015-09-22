@@ -26,6 +26,7 @@ class VocabularyInformation {
 	protected function setHtmlResponse($htmlResponse) {
 		$this->htmlResponse = $htmlResponse;
 	}
+
 	public function __construct($htmlResponse) {
 		$this->setHtmlResponse($htmlResponse);
 	}
@@ -36,9 +37,9 @@ class VocabularyInformation {
 		$idArray = array();
 		$items = pq('div[data-thing-id]');
 
-		foreach($items as $item) {
+		foreach ($items as $item) {
 
-			$idArray[] =  pq($item)->attr('data-thing-id')* 1;
+			$idArray[] = pq($item)->attr('data-thing-id') * 1;
 
 
 		}

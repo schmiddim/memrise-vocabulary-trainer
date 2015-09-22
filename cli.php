@@ -39,11 +39,16 @@ $vocInfo = new \Memrise\Http\VocabularyResponse();
 $result = $vocInfo->get("/course/78623/learn-basic-italian/6/");
 
 
-
-$parser  = new \Memrise\Parser\Html\VocabularyInformation($result);
+$parser = new \Memrise\Parser\Html\VocabularyInformation($result);
 #var_dump($parser->getItemIds()) ;
 
 
 //get info about the vocabulary with the id http://www.memrise.com/api/thing/get/?thing_id=14214352
 $thingInfo = new \Memrise\Http\JsonThingInformation();
-print_r($thingInfo->get(14092635));
+#print_r($thingInfo->get(14092635));
+
+
+$things = new \Memrise\Factories\Things(new \Memrise\Http\JsonThingInformation(), $parser->getItemIds());
+
+
+$things->getItems();
