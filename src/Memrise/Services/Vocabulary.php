@@ -82,16 +82,14 @@ class Vocabulary implements EventManagerAwareInterface {
 	 * @param int $courseId
 	 */
 	protected function setCourseId($courseId) {
-		if(false === is_int($courseId) ||-1 === $courseId){
+		if (false === is_int($courseId) || -1 === $courseId) {
 			throw new \Exception('invalid courseID');
 		}
 		$this->courseId = $courseId;
 	}
 
-
-	public function triggerEvent() {
-		$this->getEventManager()->trigger('post_Example', __CLASS__, array('payload' => 'foobarto'));
+	public function process() {
+		$this->getEventManager()->trigger(self::EVENT_COURSE_INFORMATION, __CLASS__, array('courseId' => $this->getCourseId()));
 	}
-
 
 }

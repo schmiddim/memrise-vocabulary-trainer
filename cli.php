@@ -25,18 +25,16 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $italianID = 78623;
 
-
 $eventManager = new \Zend\EventManager\EventManager();
-$eventManager->attach('post_Example', function($e){
-#	echo "post_example triggered";
-	var_dump($e->getParam('payload'));
-
-},300);
+$eventManager->attachAggregate(new \Memrise\Listener\Vocabulary());
 
 
 $courseInformation = new \Memrise\Services\Vocabulary($italianID);
 $courseInformation->setEventManager($eventManager);
-$courseInformation->triggerEvent();
+$courseInformation->process();
+
+
+
 die();
 $cI = new \Memrise\Http\JsonCourseInformation();
 
