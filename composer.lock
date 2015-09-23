@@ -444,12 +444,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-stdlib.git",
-                "reference": "b14f291987d4f904d9934fafb47f92fae0c9320d"
+                "reference": "62392b05527568861fe522f8194d246a08e7f17b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/b14f291987d4f904d9934fafb47f92fae0c9320d",
-                "reference": "b14f291987d4f904d9934fafb47f92fae0c9320d",
+                "url": "https://api.github.com/repos/zendframework/zend-stdlib/zipball/62392b05527568861fe522f8194d246a08e7f17b",
+                "reference": "62392b05527568861fe522f8194d246a08e7f17b",
                 "shasum": ""
             },
             "require": {
@@ -494,7 +494,7 @@
                 "stdlib",
                 "zf2"
             ],
-            "time": "2015-09-22 16:27:58"
+            "time": "2015-09-23 13:14:14"
         },
         {
             "name": "zendframework/zend-uri",
@@ -971,12 +971,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-token-stream.git",
-                "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da"
+                "reference": "cab6c6fefee93d7b7c3a01292a0fe0884ea66644"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
-                "reference": "3144ae21711fb6cac0b1ab4cbe63b75ce3d4e8da",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-token-stream/zipball/cab6c6fefee93d7b7c3a01292a0fe0884ea66644",
+                "reference": "cab6c6fefee93d7b7c3a01292a0fe0884ea66644",
                 "shasum": ""
             },
             "require": {
@@ -1012,7 +1012,7 @@
             "keywords": [
                 "tokenizer"
             ],
-            "time": "2015-09-15 10:49:45"
+            "time": "2015-09-23 14:46:55"
         },
         {
             "name": "phpunit/phpunit",

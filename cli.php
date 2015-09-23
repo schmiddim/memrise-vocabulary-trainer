@@ -43,7 +43,7 @@ $courseInformation = $cI->get($italianID);
 
 foreach ($courseInformation->course->levels as $level) {
 
-	echo '== ' . $level->index . ' ' .  $level->title . " ==\n";
+	echo '++ ' . $level->index . ' ' .  $level->title . " ++\n";
 
 	$vocInfo = new \Memrise\Http\VocabularyResponse();
 	$result = $vocInfo->get($level->url);
