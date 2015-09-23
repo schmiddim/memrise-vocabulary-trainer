@@ -20,7 +20,8 @@
     "secondtruth/phar-compiler": "1.0.0",
     "zendframework/zend-http": "2.5.2",
     "zendframework/zend-console":"2.5.1",
-    "zendframework/zend-json" :"2.5.2"
+    "zendframework/zend-json" :"2.5.2",
+    "zendframework/zend-eventmanager" : "2.5.2"
   },
   "require-dev": {
     "phpunit/phpunit": "4.8.6"
