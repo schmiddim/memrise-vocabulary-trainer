@@ -14,9 +14,6 @@ use Zend\Http\Client;
  */
 class JsonCourseInformation extends AbstractHttp {
 
-	/**
-	 *
-	 */
 	public function __construct() {
 		$this->setPath('course/get/?course_id=');
 	}
@@ -25,19 +22,13 @@ class JsonCourseInformation extends AbstractHttp {
 	 * @param int $courseId
 	 */
 	public function get($courseId) {
-
 		$path = $this->getPath();
 		$this->setPath($path . $courseId);
-
 		$client = new Client();
 		$client->setUri($this->getApiEndpoint() . $this->getPath());
-
 		$client->setMethod(\Zend\Http\Request::METHOD_GET);
-
 		$response = $client->send();
-
-		return $response->getBody();
-
-
+		$object =json_decode($response->getBody());
+		return $object;
 	}
 }

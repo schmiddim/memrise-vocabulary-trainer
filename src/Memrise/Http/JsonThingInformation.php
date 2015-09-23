@@ -27,8 +27,6 @@ class JsonThingInformation extends AbstractHttp {
 		$client->setUri($this->getApiEndpoint() . $path);
 		$client->setMethod(\Zend\Http\Request::METHOD_GET);
 		$response = $client->send();
-		return $response->getBody();
-
-
+		return json_decode($response->getBody());
 	}
 }

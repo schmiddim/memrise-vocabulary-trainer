@@ -59,5 +59,4 @@ class AbstractHttp {
 		$this->path = $path;
 	}
 
-
 }

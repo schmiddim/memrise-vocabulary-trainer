@@ -25,40 +25,24 @@ require_once dirname(__FILE__) . DIRECTORY_SEPARATOR . 'vendor/autoload.php';
 
 $italianID = 78623;
 
-$eventManager = new \Zend\EventManager\EventManager();
-$eventManager->attachAggregate(new \Memrise\Listener\Vocabulary());
-
-
-$courseInformation = new \Memrise\Services\Vocabulary($italianID);
-$courseInformation->setEventManager($eventManager);
-$courseInformation->process();
-
-
-
-die();
 $cI = new \Memrise\Http\JsonCourseInformation();
+$courseInformation = $cI->get($italianID);
 
-$cI->get($italianID);
+foreach($courseInformation->course->levels as $level) {
 
+	echo $level->title . "\n";
+	$vocInfo = new \Memrise\Http\VocabularyResponse();
+	$result = $vocInfo->get($level->url);
+	$thingInfo = new \Memrise\Parser\Html\VocabularyInformation($result);
 
-$level = new \Memrise\Http\JsonLevelInformation(614731);
-$result = $level->get(614731);
+	foreach($thingInfo->getItemIds() as $itemId) {
+		$thingInfo = new \Memrise\Http\JsonThingInformation();
+		$info  =$thingInfo->get($itemId);
 
+		$foreign=  $info->thing->columns->{'1'}->val;
+		$translation = $info->thing->columns->{'2'}->val;
+		echo $info->thing->columns->{'1'}->val . "\t" . $translation ."\n" ;
 
-$vocInfo = new \Memrise\Http\VocabularyResponse();
-$result = $vocInfo->get("/course/78623/learn-basic-italian/6/");
+	}
 
-
-$parser = new \Memrise\Parser\Html\VocabularyInformation($result);
-#var_dump($parser->getItemIds()) ;
-
-
-//get info about the vocabulary with the id http://www.memrise.com/api/thing/get/?thing_id=14214352
-$thingInfo = new \Memrise\Http\JsonThingInformation();
-#print_r($thingInfo->get(14092635));
-
-
-$things = new \Memrise\Factories\Things(new \Memrise\Http\JsonThingInformation(), $parser->getItemIds());
-
-
-$things->getItems();
+}
