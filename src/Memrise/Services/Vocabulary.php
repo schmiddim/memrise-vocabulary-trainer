@@ -15,7 +15,15 @@ use Zend\EventManager\EventManager;
  * Class Vocabulary
  * @package Memrise\Services
  */
-class Vocabulary implements EventManagerAwareInterface{
+class Vocabulary implements EventManagerAwareInterface {
+
+	const EVENT_COURSE_INFORMATION = 'get_course_information';
+
+	const EVENT_GET_LEVELS = 'get_levels';
+
+	const EVENT_GET_THING_IDS = 'get_thing_ids';
+
+	const EVENT_GET_THING = 'get_thing';
 
 
 	/***
@@ -26,6 +34,7 @@ class Vocabulary implements EventManagerAwareInterface{
 	 * @var null
 	 */
 	protected $events = null;
+
 	/**
 	 * Inject an EventManager instance
 	 *
@@ -35,9 +44,8 @@ class Vocabulary implements EventManagerAwareInterface{
 
 
 	public function __construct($courseId) {
-
+		$this->setCourseId($courseId);
 	}
-
 
 
 	public function setEventManager(EventManagerInterface $eventManager) {
@@ -74,15 +82,16 @@ class Vocabulary implements EventManagerAwareInterface{
 	 * @param int $courseId
 	 */
 	protected function setCourseId($courseId) {
+		if(false === is_int($courseId) ||-1 === $courseId){
+			throw new \Exception('invalid courseID');
+		}
 		$this->courseId = $courseId;
 	}
 
 
-
 	public function triggerEvent() {
-		$this->getEventManager()->trigger('post_Example',__CLASS__, array('payload' => 'foobarto'));
+		$this->getEventManager()->trigger('post_Example', __CLASS__, array('payload' => 'foobarto'));
 	}
-
 
 
 }
