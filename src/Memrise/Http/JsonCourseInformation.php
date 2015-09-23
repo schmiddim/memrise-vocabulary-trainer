@@ -28,7 +28,7 @@ class JsonCourseInformation extends AbstractHttp {
 		$client->setUri($this->getApiEndpoint() . $this->getPath());
 		$client->setMethod(\Zend\Http\Request::METHOD_GET);
 		$response = $client->send();
-		$object =json_decode($response->getBody());
+		$object = json_decode($response->getBody());
 		return $object;
 	}
 }
